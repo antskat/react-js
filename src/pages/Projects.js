@@ -4,6 +4,53 @@ import project03 from "../img/projects/03.jpg";
 import project04 from "../img/projects/04.jpg";
 import project05 from "../img/projects/05.jpg";
 import project06 from "../img/projects/06.jpg";
+import img1 from "../img/projects/01-big.jpg";
+import img2 from "../img/projects/02-big.jpg";
+import img3 from "../img/projects/03-big.jpg";
+import img4 from "../img/projects/04-big.jpg";
+import img5 from "../img/projects/05-big.jpg";
+import img6 from "../img/projects/06-big.jpg";
+
+import { NavLink } from "react-router-dom";
+
+export const projects = [
+  {
+    id: 1,
+    title: "Gaming streaming portal",
+    img: project01,
+    imgBig: img1
+  },
+  {
+    id: 2,
+    title: "Video service",
+    img: project02,
+    imgBig: img2
+  },
+  {
+    id: 3,
+    title: "Gaming streaming portal",
+    img: project03,
+    imgBig: img3
+  },
+  {
+    id: 4,
+    title: "Video service",
+    img: project04,
+    imgBig: img4
+  },
+  {
+    id: 5,
+    title: "Gaming streaming portal",
+    img: project05,
+    imgBig: img5
+  },
+  {
+    id: 6,
+    title: "Video service",
+    img: project06,
+    imgBig: img6
+  },
+];
 
 const Projects = () => {
   return (
@@ -11,65 +58,23 @@ const Projects = () => {
       <div className="container">
         <h2 className="title-1">Projects</h2>
         <ul className="projects">
-          <li className="project">
-            <a href="./project-page.html">
-              <img
-                src={project01}
-                alt="Project img"
-                className="project__img"
-              />
-              <h3 className="project__title">Gaming streaming portal</h3>
-            </a>
-          </li>
-          <li className="project">
-            <a href="./project-page.html">
-              <img
-                src={project02}
-                alt="Project img"
-                className="project__img"
-              />
-              <h3 className="project__title">Video service</h3>
-            </a>
-          </li>
-          <li className="project">
-            <a href="./project-page.html">
-              <img
-                src={project03}
-                alt="Project img"
-                className="project__img"
-              />
-              <h3 className="project__title">Video portal</h3>
-            </a>
-          </li>
-
-          <li className="project">
-            <img
-              src={project04}
-              alt="Project img"
-              className="project__img"
-            />
-            <h3 className="project__title">Dating app</h3>
-          </li>
-          <li className="project">
-            <img
-              src={project05}
-              alt="Project img"
-              className="project__img"
-            />
-            <h3 className="project__title">Landing</h3>
-          </li>
-          <li className="project">
-            <img
-              src={project06}
-              alt="Project img"
-              className="project__img"
-            />
-            <h3 className="project__title">Gaming community</h3>
-          </li>
+          {projects.map((project) => (
+            <li key={project.id} className="project">
+              <NavLink to={`/project/${project.id}`}>
+                <img
+                  src={project.img}
+                  alt="Project img"
+                  className="project__img"
+                />
+                <h3 className="project__title">{project.title}</h3>
+              </NavLink>
+            </li>
+          ))}
         </ul>
       </div>
     </main>
   );
 };
+
 
 export default Projects;
