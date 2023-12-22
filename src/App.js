@@ -19,10 +19,10 @@ function App() {
         <Navbar />
 
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/projects" element={<Projects />} />
-          <Route path="/project/:id" element={<ProjectPage />} />
-          <Route path="/contacts" element={<Contacts />} />
+          <Route path="/react-js/" element={<Home />} />
+          <Route path="/react-js/projects" element={<Projects />} />
+          <Route path="/react-js/project/:id" element={<ProjectPage />} />
+          <Route path="/react-js/contacts" element={<Contacts />} />
         </Routes>
 
         <Footer />
